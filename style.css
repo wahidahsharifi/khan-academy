@@ -51,32 +51,32 @@ header>nav *{
   font-size: 17px;
   font-weight: 500;
 }
-header *:hover{
-  cursor: pointer;
+.name{
+  display: flex;
+  align-items: center;
+  height: 55px;
 }
-details{
-  margin-right: 40px;
+summary {
+  padding-right: 20px;
 }
 .search{
   font-weight: 500;
   height: 40px;
   border: none;
+  text-indent: 5px;
   border-radius: 5px;
   width: 200px;
-  margin-top: 5px;
   background-color: rgb(247,248,250);
-  transition-property: background-color;
-  transition-duration: .5s;
+  transition: all 100ms ease;
+  color: #000;
 }
 .search:hover{
-  background-color: rgb(187, 190, 197);
+  background-color: rgb(243, 242, 242);
 }
 .search::placeholder{
-  color: #00f;
+  color: #000;
 }
 nav img{
-  position: relative;
-  top: 10px;
   width: 40px;
   height: 40px;
 }
@@ -86,7 +86,7 @@ nav span{
   font-weight: 700;
   color: #223f75;
 }
-nav span:hover{
+.name:hover span{
   color: #00f;
 }
 .hlast>a{
@@ -101,56 +101,40 @@ nav span:hover{
 #menu{
   display: none;
 }
-/* ************************************* */
-
-.n{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.menuc{
-  display: block;
-  width: 300px;
-  height: 210px;
-}
-.menuc>li:first-child{
-  display: block;
-}
-.menuc>li{
-  width: 300px;
-  height: 70px;
-  line-height: 70px;
-  font-size: 30px;
-  background: none;
-  border: 1px solid blue;
-  border-radius: none;
+.hlast + label{
+  display: none;
 }
 
 /* ************************************* */
 main{
-  max-width: 1280px;
-  margin: auto;
+  width: 100%;
+  height: 100svh;
+}
+main *{
+  text-shadow: 1px 1px #fff;
 }
 article{
   width: 100%;
 }
 section{
-  background-color: azure;
   width: 95%;
   padding: 30px 20px 10px 20px;
   margin: 0 auto;
   display: flex;
-  flex-grow: row-reverse wrap;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
 }
 section img{
-  width: 40%;
+  width: min(40%, 500px);
+  align-self: flex-end;
 }
 section div{
   float: left;
   padding: 0 0 0 35px;
 }
 h1{
-  width: 60%;
+  width: 100%;
   margin: 80px 0 0 0;
   font-size: 34px;
   line-height: 36px;
@@ -162,6 +146,7 @@ p{
   font-size: 18px !important;
   line-height: 24px;
   padding-right: 15%;
+  width: 90%;
 }
 ul{
   padding: 0;
@@ -169,6 +154,9 @@ ul{
   flex-grow: row nowrap;
   justify-content: space-between;
   color: #fff;
+}
+ul *{
+  text-shadow: none;
 }
 li:first-child{
   display: none;
@@ -213,11 +201,19 @@ li{
   section>img{
     position: absolute;
     right: 1%;
-    width: 50%;
+    width: max(250px, 60%);
     z-index: 1;
   }
   section>div{
     float: none;
     z-index: 2;
+  }
+}
+@media screen and (max-width: 500px) {
+  header > nav {
+    justify-content: center;
+  }
+  .hlast{
+    display: none;
   }
 }
